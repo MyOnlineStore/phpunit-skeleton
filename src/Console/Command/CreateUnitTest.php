@@ -35,12 +35,8 @@ final class CreateUnitTest extends Command
         $helper = $this->getHelper('question');
         $newFileName = null;
 
-        if (false !== ($position = strpos($filePath, 'Application'))) {
-            $newFileName = substr_replace($filePath, '/Tests', $position + 11, 0);
-        } elseif (false !== ($position = strpos($filePath, 'Domain'))) {
-            $newFileName = substr_replace($filePath, '/Tests', $position + 6, 0);
-        } elseif (false !== ($position = strpos($filePath, 'Infrastructure'))) {
-            $newFileName = substr_replace($filePath, '/Tests', $position + 14, 0);
+        if (false !== ($position = strpos($filePath, 'MyOnlineStore'))) {
+            $newFileName = substr_replace($filePath, '/Tests', $position + 13, 0);
         }
 
         if (null === $newFileName) {
