@@ -10,3 +10,6 @@ usage:
 
 building a new version of the phar (with box)
 `./vendor/bin/box build`
+
+also included is a bash script which you can give a commmit hash and it will create unittests for all added files
+from that hash
