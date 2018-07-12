@@ -39,6 +39,8 @@ final class CreateUnitTest extends Command
             $newFileName = substr_replace($filePath, '/Tests', $position + 13, 0);
         }
 
+        $newFileName = \str_replace('src/', 'tests/unit/', $newFileName);
+
         if (null === $newFileName) {
             throw new \InvalidArgumentException('no valid filename provided');
         }
