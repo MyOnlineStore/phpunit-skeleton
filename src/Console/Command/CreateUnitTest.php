@@ -36,7 +36,7 @@ final class CreateUnitTest extends Command
         $newFileName = null;
 
         if (false !== ($position = strpos($filePath, 'MyOnlineStore'))) {
-            $newFileName = substr_replace($filePath, '/Tests', $position + 13, 0);
+            $newFileName = $filePath;
         }
 
         $newFileName = \str_replace('src/', 'tests/unit/', $newFileName);
@@ -94,7 +94,7 @@ final class CreateUnitTest extends Command
 
         $lastPartOfNameSpace = $namespace;
         unset($lastPartOfNameSpace[0], $lastPartOfNameSpace[1]);
-        $newNameSpace = implode('\\', array_merge([$namespace[0], $namespace[1], 'Tests'], $lastPartOfNameSpace));
+        $newNameSpace = implode('\\', array_merge([$namespace[0], 'Tests', $namespace[1]], $lastPartOfNameSpace));
 
         if (empty($newNameSpace)) {
             throw new \InvalidArgumentException('no valid namespace provided');
