@@ -107,8 +107,9 @@ final class CreateUnitTest extends Command
             $template .= sprintf("use %s;\n", $import);
         }
 
+        $template .= "use PHPUnit\Framework\TestCase;\n";
         $template .= sprintf(
-            "\nfinal class %sTest extends \PHPUnit\Framework\TestCase\n{\n",
+            "\nfinal class %sTest extends TestCase\n{\n",
             $sourceClass->getShortName()
         );
 
